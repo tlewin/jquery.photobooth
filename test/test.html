@@ -39,7 +39,7 @@
         $('#booth').photobooth({
           width: 350,
           height: 225,
-          imgPlaceholder: 'http://www.lacartes.com/images/video-placeholder-black.jpg'
+          imgPlaceholder: 'video-placeholder.jpg'
         },
         function(control) {
           var capturing = false;
@@ -56,7 +56,7 @@
           });
         },
         function() {
-          console.log('fail!');
+          alert('This browser does not support image capture.');  
         });
       });
     </script>
