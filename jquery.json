@@ -1,6 +1,6 @@
 {
   "name": "jQuery Photo Booth",
-  "version": "v0.1.1",
+  "version": "v0.1.2",
   "title": "$(id).photobooth()",
   "description": "Creates plugin for take webcam snapshots.",
   "author": "Thiago Lewin",

@@ -31,7 +31,7 @@
     $.extend(true, settings, options);
     
     /* Check if browser support video capture */
-    if(!(navigator.getUserMedia || window.URL)) {
+    if(!(navigator.getUserMedia && window.URL)) {
       if(onError){
         // TODO include support for jquery.webcam
         onError.call(null);
