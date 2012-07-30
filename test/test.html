@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css" media="screen">
+      html, body {
+        margin: 0px;
+        font-family: 'Arial', 'Sans-Serif';
+        font-size: 16px;
+        background: #eeeeee;
+      }
+      
+      .content {
+        margin: 10px auto;
+        width: 300px;
+      }
+      
+      h1 {
+        margin: 0px;
+      }
+      
+      #booth {
+        margin: 20px 0px 0px 0px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <title>jQuery | Photo Booth</title>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Photo Booth</h1>
+      <div id="booth"></div>
+      <button id="btn-go">Go!</button>
+      <button id="btn-stop">Stop!</button>
+    </div>
+    <script src="../jquery.photobooth.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        $('#booth').photobooth({
+          width: 350,
+          height: 225,
+          imgPlaceholder: 'http://www.lacartes.com/images/video-placeholder-black.jpg'
+        },
+        function(control) {
+          var capturing = false;
+          $('#btn-go').click(function() {
+            if(capturing) {
+              control.snapshot();
+            } else {
+              control.start();
+            }
+            capturing = !capturing;
+          });
+          $('#btn-stop').click(function() {
+            control.stop();
+          });
+        },
+        function() {
+          console.log('fail!');
+        });
+      });
+    </script>
+  </body>
+</html>
