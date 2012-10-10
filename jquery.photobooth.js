@@ -44,7 +44,7 @@
       var
         mainDiv     = $('<div></div>'),
         video       = $('<video></video>'),
-        canvas      = $('<canvas></canvas'),
+        canvas      = $('<canvas></canvas>'),
         img         = $('<img></img>'),
         localStream = null,
         el          = $(elem),
@@ -76,7 +76,6 @@
               video.attr('src', window.URL.createObjectURL(localStream));
               img.hide();
             }, function() {
-              console.log('fail');
               if(onError) {
                 onError.call(null);
               }
